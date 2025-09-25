@@ -15,8 +15,11 @@ Users can view the cow list with details, add new cows, and apply search and fil
 - Clicking a cow opens a **details page** with complete information.
 
 ---
+## Node Version
+v22.19.0
 
 ## Run the App
+If cloned from gitub, run npm install in cowapp
 
 To run the development server:
 
