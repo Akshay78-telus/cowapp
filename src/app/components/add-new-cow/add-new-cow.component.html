@@ -1,0 +1,60 @@
+<div class="cow-form p-fluid">
+  <h2 class="form-heading">Add New Cow</h2>
+  <form [formGroup]="cowForm"
+        (ngSubmit)="onSubmit()">
+
+    <div *ngFor="let field of formConfig"
+         class="p-field">
+
+      <label [for]="field.key">{{ field.label }}</label>
+
+      <!-- Input -->
+      <input *ngIf="field.type === 'input'"
+             pInputText
+             [type]="field.inputType || 'text'"
+             [id]="field.key"
+             [formControlName]="field.key"
+             [ngClass]="{
+                'error-field': cowForm.get(field.key)?.touched && cowForm.get(field.key)?.invalid,
+                'success-field': cowForm.get(field.key)?.touched && cowForm.get(field.key)?.valid
+              }" />
+
+      <!-- Dropdown -->
+      <p-select *ngIf="field.type === 'dropdown'"
+                [options]="mapToDropdownOptions(field.options)"
+                [formControlName]="field.key"
+                [id]="field.key"
+                placeholder="Select {{field.label}}"
+                [ngClass]="{
+                   'error-field': cowForm.get(field.key)?.touched && cowForm.get(field.key)?.invalid,
+                   'success-field': cowForm.get(field.key)?.touched && cowForm.get(field.key)?.valid
+                 }">
+      </p-select>
+
+      <!-- Error messages -->
+      <div *ngIf="cowForm.get(field.key)?.touched && cowForm.get(field.key)?.invalid"
+           class="error" >
+        <small *ngIf="cowForm.get(field.key)?.errors?.['required']">
+          {{ field.label }} is required
+        </small>
+        <small *ngIf="cowForm.get(field.key)?.errors?.['positive']">
+          {{ field.label }} must be positive
+        </small>
+        <small *ngIf="cowForm.get(field.key)?.errors?.['unique']">
+          Ear tag already assigned. Please provide unique Ear Tag.
+        </small>
+      </div>
+    </div>
+
+    <button pButton
+            type="submit"
+            label="Add Cow">
+    </button>
+    <button pButton
+            class="p-button-secondary"
+            type="button"
+            label="Cancel"
+            (click)="onCancel()">
+    </button>
+  </form>
+</div>

@@ -1,0 +1,45 @@
+.cow-form {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  .form-heading {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .p-field {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .error-field {
+    border: 1px solid red;
+    border-radius: 4px;
+  }
+
+  .success-field {
+    border: 1px solid green;
+    border-radius: 4px;
+  }
+
+  .error small {
+    color: red;
+  }
+
+  .error small {
+    color: #d32f2f;
+    font-size: 0.8rem;
+  }
+}

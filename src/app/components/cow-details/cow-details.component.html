@@ -1,0 +1,16 @@
+<div *ngIf="cow"
+     class="card">
+  <h2>Cow Details - {{ cow.earTag }}</h2>
+  <div class="grid">
+    <div class="col-6"><strong>Ear Tag:</strong> {{ cow.earTag }}</div>
+    <div class="col-6"><strong>Sex:</strong> {{ cow.sex }}</div>
+    <div class="col-6"><strong>Pen:</strong> {{ cow.pen }}</div>
+    <div class="col-6"><strong>Status:</strong> {{ cow.status }}</div>
+    <div class="col-6"><strong>Last Event Date:</strong> {{ cow.lastEventDate | date:'mediumDate' }}</div>
+    <div *ngIf="cow?.weight"
+         class="col-6"><strong>Weight:</strong> {{ cow.weight }} kg
+    </div>
+  </div>
+</div>
+
+<a routerLink="/cows"> <- Back to list</a>

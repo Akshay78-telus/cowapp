@@ -1,0 +1,13 @@
+.cow-row {
+  cursor: pointer;
+
+  &:hover {
+    background-color: #94f169;
+  }
+}
+
+.add-new-cow-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}

@@ -1,0 +1,53 @@
+<div class="grid align-items-center mb-3">
+  <!-- Search by Tag -->
+  <div class="col-4">
+    <div class="p-field p-grid p-align-center">
+      <label for="searchTag"
+             class="col-fixed"
+             style="width: 120px;">Search by Tag:
+      </label>
+      <div class="col">
+        <input id="searchTag"
+               pInputText
+               placeholder="Enter tag"
+               [(ngModel)]="searchTag"
+               (input)="applyFilters()">
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter by Status -->
+  <div class="col-4">
+    <div class="p-field p-grid p-align-center">
+      <label for="filterStatus"
+             class="col-fixed"
+             style="width: 120px;">Status:
+      </label>
+      <div class="col">
+        <p-select id="filterStatus"
+                  [options]="['Active','In Treatment','Deceased', 'All']"
+                  placeholder="Select status"
+                  [(ngModel)]="filterStatus"
+                  (onChange)="applyFilters()">
+        </p-select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter by Pen -->
+  <div class="col-4">
+    <div class="p-field p-grid p-align-center">
+      <label for="filterPen"
+             class="col-fixed"
+             style="width: 120px;">Pen:
+      </label>
+      <div class="col">
+        <input id="filterPen"
+               pInputText
+               placeholder="Enter pen"
+               [(ngModel)]="filterPen"
+               (input)="applyFilters()">
+      </div>
+    </div>
+  </div>
+</div>
